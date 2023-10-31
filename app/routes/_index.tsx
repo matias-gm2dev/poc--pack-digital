@@ -1,7 +1,9 @@
 import {useLoaderData} from '@remix-run/react';
 import {defer, LoaderArgs} from '@shopify/remix-oxygen';
 import {AnalyticsPageType} from '@shopify/hydrogen';
-import {RenderSections} from '@pack/react';
+import {RenderSections, useSiteSettings} from '@pack/react';
+import * as reactpack from '@pack/react';
+import {PackClient} from '@pack/client';
 
 export function meta({data}: any) {
   return [
@@ -22,9 +24,13 @@ export async function loader({context}: LoaderArgs) {
 
 export default function Index() {
   const {page} = useLoaderData();
+  const settings = useSiteSettings();
+  // const page_ = usePage();
+  console.log(page);
 
   return (
     <div className="grid gap-4">
+      Hola Mundo
       <RenderSections content={page} />
     </div>
   );

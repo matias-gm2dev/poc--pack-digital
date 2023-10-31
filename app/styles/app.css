@@ -39,6 +39,6 @@
   }
 
   .btn-primary {
-    @apply btn bg-cyan-400;
+    @apply btn bg-red-500;
   }
 }

@@ -9,6 +9,7 @@ import {
 } from '@shopify/hydrogen';
 import {RenderSections} from '@pack/react';
 import ProductOptions from '~/components/ProductOptions';
+// import {useProduct} from '@backpackjs/storefront';
 
 export function meta({data}: any) {
   return [
@@ -76,7 +77,8 @@ export default function ProductHandle() {
   const {price, compareAtPrice, availableForSale} = selectedVariant || {};
   const orderable = availableForSale || false;
   const isDiscounted = compareAtPrice?.amount > price?.amount;
-
+  // const _product = useProduct(1);
+  // console.log(_product);
   return (
     <div className="grid gap-4">
       <section className="container grid items-start gap-6 lg:gap-12 md:grid-cols-2 ">
